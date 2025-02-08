@@ -4,7 +4,7 @@ export default function AllCategories() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/ProductCard") // Same API endpoint to get all products
+    fetch("http://localhost:8080/ProductCard") 
       .then((response) => response.json())
       .then((data) => setProducts(data))
       .catch((error) => console.error("Error fetching products:", error));
