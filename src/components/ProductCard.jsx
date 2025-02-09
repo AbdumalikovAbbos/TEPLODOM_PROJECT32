@@ -7,7 +7,7 @@ export default function ProductCard() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:8080/ProductCardHome")
+    fetch("http://localhost:8081/ProductCardHome")
       .then((response) => response.json())
       .then((data) => setProducts(data))
       .catch((error) => console.error("Error fetching products:", error));

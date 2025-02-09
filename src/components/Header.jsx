@@ -18,7 +18,7 @@ export default function Header () {
         className='max-w-7xl mx-auto px-4  '
         style={{ borderRadius: '20px' }}
       >
-        <div className='relative h-[400px] mt-4'>
+        <div className='relative h-[400px] mt-1'>
           {slides.map((slide, index) => (
             <div
               key={index}

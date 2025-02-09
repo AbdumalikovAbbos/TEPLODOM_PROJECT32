@@ -9,7 +9,7 @@ const CategoryCard = () => {
   const isCategoryPage = location.pathname === "/categories";
 
   useEffect(() => {
-    fetch("http://localhost:8080/CategoryCard")
+    fetch("http://localhost:8081/CategoryCard")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Server xatosi!");
@@ -95,9 +95,10 @@ const CategoryCard = () => {
                   className="bg-white w-full max-w-[160px] mx-auto text-center rounded-lg p-5 shadow-md"
                 >
                   <img
-                    className="mb-6 mx-auto"
+                    className="mb-6 mx-auto "
                     src={category.image}
                     alt={category.title}
+                        
                   />
                   <b className="font-inter">{category.title}</b>
                 </div>
