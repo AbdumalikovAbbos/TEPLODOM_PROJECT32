@@ -48,7 +48,6 @@
 
 // export default AdvantagesTwoRows;
 
-import React from "react";
 
 const AdvantagesTwoRows = () => {
   return (
