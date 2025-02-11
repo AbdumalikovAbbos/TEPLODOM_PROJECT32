@@ -47,9 +47,26 @@ export default function ProductCard() {
                 {product.title}
               </p>
               <b className="mx-4 text-sm sm:text-base">{product.price}</b>
-              <div className="m-4 mt-4">
+              <div className="m-4 mt-4 flex gap-x-[10px]">
                 <button className="flex items-center justify-center bg-[#FFB12A] text-white gap-2 border border-[#FFB12A] rounded-lg p-2 w-full sm:w-auto">
                   <ShoppingCart size={20} />В корзину
+                </button>
+                {/* ?like */}
+                <button className="bg-[#FFB12A] p-3 rounded-lg shadow-lg hover:bg-yellow-500 transition duration-300">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2}
+                    stroke="white"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6.01 4.01 4 6.5 4c1.54 0 3.04.99 3.57 2.36h1.87C14.46 4.99 15.96 4 17.5 4 19.99 4 22 6.01 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                    />
+                  </svg>
                 </button>
               </div>
             </div>

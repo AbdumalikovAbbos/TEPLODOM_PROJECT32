@@ -3,6 +3,9 @@ import CategoryCard from "../components/CategoryCard";
 import ProductCard from "../components/ProductCard";
 import BrandSlider from "../components/BrandLogo";
 import OurProducts from "../components/OurProducts";
+import OurComand from "../components/OurComand";
+import InternetShop from "../components/InternetShop";
+import FooterT from "../components/FooterT";
 
 const Home = () => {
   return (
@@ -12,6 +15,8 @@ const Home = () => {
       <ProductCard />
       <BrandSlider />
       <OurProducts />
+      <OurComand />
+      <InternetShop />
     </div>
   );
 };

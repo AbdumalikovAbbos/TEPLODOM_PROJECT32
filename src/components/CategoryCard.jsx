@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const CategoryCard = () => {
+  
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -90,9 +91,10 @@ const CategoryCard = () => {
           {!loading && !error && (
             <div className="grid grid-cols-2 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 md:gap-10 mt-8">
               {visibleCategories.map((category) => (
-                <div
+                <Link
                   key={category.id}
-                  className="bg-white w-full max-w-[160px] mx-auto text-center rounded-lg p-5 shadow-md"
+                  to={`/categories/${category.id} `}
+                  className="bg-white w-full max-w-[160px] mx-auto text-center rounded-lg p-5 shadow-md"   
                 >
                   <img
                     className="mb-6 mx-auto "
@@ -101,7 +103,7 @@ const CategoryCard = () => {
                         
                   />
                   <b className="font-inter">{category.title}</b>
-                </div>
+                </Link>
               ))}
             </div>
           )}

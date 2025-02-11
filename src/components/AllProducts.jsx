@@ -4,7 +4,7 @@ export default function AllCategories() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8081/ProductCard") 
+    fetch("http://localhost:8081/ProductCard")
       .then((response) => response.json())
       .then((data) => setProducts(data))
       .catch((error) => console.error("Error fetching products:", error));
@@ -20,7 +20,11 @@ export default function AllCategories() {
             className="w-full sm:w-[255px] h-auto rounded-lg border bg-white shadow-sm overflow-hidden"
           >
             <div className="flex items-center justify-center p-4 md:p-10">
-              <img src={product.img} alt={product.title} className="max-h-36 object-contain" />
+              <img
+                src={product.img}
+                alt={product.title}
+                className="max-h-36 object-contain"
+              />
             </div>
             <p className="ms-4 font-inter w-full truncate">{product.title}</p>
             <b className="ms-4">{product.price}</b>

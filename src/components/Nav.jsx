@@ -114,7 +114,9 @@ export default function Nav() {
               className="flex items-center gap-2 bg-white p-2 lg:p-3 text-sm rounded-[15px]"
             >
               <User className="w-5 h-5 lg:w-6 lg:h-6" />
-              <span className="font-['Poppins'] hidden lg:inline">Профиль</span>
+              <span className=" hidden lg:inline font-[400] text-[18px]">
+                Профиль
+              </span>
             </Link>
           </div>
 
