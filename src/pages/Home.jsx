@@ -5,7 +5,12 @@ import BrandSlider from "../components/BrandLogo";
 import OurProducts from "../components/OurProducts";
 import OurComand from "../components/OurComand";
 import InternetShop from "../components/InternetShop";
-import FooterT from "../components/FooterT";
+// import FooterT from "../components/FooterT";
+// import { Route, Router } from "lucide-react";
+// import { Routes } from "react-router-dom";
+// import Postavshikam from "../components/Postavshikam";
+import PopularTovars from "../components/PopularTovars";
+// import PopularTovarsDetail from "../components/PopularTovarsDetail";
 
 const Home = () => {
   return (
@@ -14,6 +19,7 @@ const Home = () => {
       <CategoryCard />
       <ProductCard />
       <BrandSlider />
+      <PopularTovars />   
       <OurProducts />
       <OurComand />
       <InternetShop />

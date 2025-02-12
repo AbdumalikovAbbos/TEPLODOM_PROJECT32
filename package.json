@@ -19,9 +19,11 @@
     "react-router-dom": "^7.1.5",
     "react-slick": "^0.30.3",
     "redux": "^5.0.1",
+    "router-dom": "^3.0.1",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.2.2",
-    "swiper-react": "^1.0.0"
+    "swiper-react": "^1.0.0",
+    "uuid": "^11.0.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",

@@ -1,7 +1,7 @@
 const InternetShop = () => {
   return (
     <section className="relative max-w-7xl mx-auto px-4 py-8 pt-[100px] pb-[100px]">
-      <h2 className="font-bold text-2xl md:text-[30px] mb-8">
+      <h2 className="font-bold text-2xl md:text-[25px] mb-8">
         Интернет магазин Теплодом
       </h2>
       <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-[90px]">

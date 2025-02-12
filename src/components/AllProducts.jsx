@@ -19,7 +19,7 @@ export default function AllCategories() {
             key={product.id}
             className="w-full sm:w-[255px] h-auto rounded-lg border bg-white shadow-sm overflow-hidden"
           >
-            <div className="flex items-center justify-center p-4 md:p-10">
+            <div className="flex items-center justify-center p-4 md:p-10">1
               <img
                 src={product.img}
                 alt={product.title}

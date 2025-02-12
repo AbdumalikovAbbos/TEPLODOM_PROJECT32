@@ -9,7 +9,7 @@ export default function Nav() {
 
   return (
     <div className="w-full bg-[#fafafa]">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4 pt-[35px]">
         <div className="flex items-center justify-between py-4">
           <Link to="/" className="flex items-center gap-4">
             <svg
@@ -298,31 +298,31 @@ export default function Nav() {
         <nav className="hidden md:flex justify-between gap-4 py-5">
           <Link
             to="/sale"
-            className="px-[25px] py-[11px] bg-[#eeeded] rounded-lg text-[#000000] hover:bg-orange-600 hover:text-white transition-colors font-inter"
+            className="px-[25px] py-[11px] bg-[#eeeded] rounded-lg text-[#000000] hover:bg-[#FFB12A] hover:text-white transition-colors font-[600] font-inter"
           >
             Товары по акции
           </Link>
           <Link
             to="/new"
-            className="px-[25px] py-[11px] bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors font-inter"
+            className="px-[25px] py-[11px] bg-[#FFB12A] text-white rounded-lg hover:bg-[#FFB12A] transition-colors  font-[600] font-inter"
           >
             Новинки
           </Link>
           <Link
             to="/suppliers"
-            className="px-[25px] py-[11px] bg-[#eeeded] rounded-lg text-[#000000] hover:bg-orange-600 hover:text-white transition-colors font-inter"
+            className="px-[25px] py-[11px] bg-[#eeeded] rounded-lg text-[#000000] hover:bg-[#FFB12A] hover:text-white font-[600] transition-colors font-inter"
           >
             Поставщикам
           </Link>
           <Link
             to="/contacts"
-            className="px-[25px] py-[11px] bg-[#eeeded] rounded-lg text-[#000000] hover:bg-orange-600 hover:text-white transition-colors font-inter"
+            className="px-[25px] py-[11px] bg-[#eeeded] rounded-lg text-[#000000]hover:bg-[#FFB12A] hover:text-white font-[600] transition-colors font-inter"
           >
             Контакты
           </Link>
           <Link
             to="/returns"
-            className="px-[25px] py-[11px] bg-[#eeeded] rounded-lg text-[#000000] hover:bg-orange-600 hover:text-white transition-colors font-inter"
+            className="px-[25px] py-[11px] bg-[#eeeded] rounded-lg text-[#000000] hover:bg-[#FFB12A] hover:text-white font-[600] transition-colors font-inter"
           >
             Возврат товара
           </Link>
