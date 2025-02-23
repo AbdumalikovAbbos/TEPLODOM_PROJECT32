@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 const SuxiSmesiDetail = () => {
-  const { categoryId } = useParams(); // Get the category ID from the URL
+  const { categoryId } = useParams(); 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

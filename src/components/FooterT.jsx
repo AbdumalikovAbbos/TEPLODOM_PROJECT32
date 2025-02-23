@@ -99,12 +99,12 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to={"/"} className={"text-[#fff] text-[16px]"}>
+                  <Link to={"/suppliers"} className={"text-[#fff] text-[16px]"}>
                     Поставщикам
                   </Link>
                 </li>
                 <li>
-                  <Link to={"/"} className={"text-[#fff] text-[16px]"}>
+                  <Link to={"/returns"} className={"text-[#fff] text-[16px]"}>
                     Возврат товара
                   </Link>
                 </li>

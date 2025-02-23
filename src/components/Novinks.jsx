@@ -1,22 +1,19 @@
 import { useEffect, useState } from "react";
 import { ShoppingCart } from "lucide-react";
 import { useNavigate } from "react-router-dom"; // Router dan navigate import qilish
-import { useCart } from "../contexts/CartContext";
 
-export default function PopularTovars() {
+export default function Novinks() {
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
-  const {addToCart} = useCart()
   useEffect(() => {
-    fetch("http://localhost:8081/ProductCard")
+    fetch("http://localhost:8081/Novinka")
       .then((response) => response.json())
       .then((data) => setProducts(data))
       .catch((error) => console.error("Error fetching products:", error));
   }, []);
 
-
   return (
-    <div className="w-full">
+    <div className="w-full bg-[#fafafa]">
       <header className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row justify-between items-center mb-[30px]">
           <b className="text-lg sm:text-2xl font-inter mb-4 sm:mb-0 inline-flex items-center">
@@ -38,7 +35,7 @@ export default function PopularTovars() {
             >
               <div
                 className="flex items-center justify-center p-6 sm:p-10"
-                onClick={() => navigate(`/product-detail/${product.id}`)}
+                onClick={() => navigate(`/novinka-detail/${product.id}`)}
               >
                 <img
                   src={product.img}
@@ -51,7 +48,7 @@ export default function PopularTovars() {
               </p>
               <b className="mx-4 text-sm sm:text-base">{product.price} $</b>
               <div className="m-4 mt-4 flex gap-2">
-                <button className="flex items-center justify-center bg-[#FFB12A] text-white gap-2 border border-[#FFB12A] rounded-lg p-2 w-full sm:w-auto mb-2" onClick={() => addToCart(product)}>
+                <button className="flex items-center justify-center bg-[#FFB12A] text-white gap-2 border border-[#FFB12A] rounded-lg p-2 w-full sm:w-auto mb-2">
                   <ShoppingCart size={20} /> В корзину
                 </button>
                 <button className="bg-[#FFB12A] p-2 h-10 rounded-lg shadow-lg hover:bg-yellow-500 transition duration-300">
@@ -78,3 +75,66 @@ export default function PopularTovars() {
     </div>
   );
 }
+
+
+
+
+// import React from "react";
+
+// const products = [
+//   {
+//     id: 1,
+//     name: "Дренажная профилированная мембрана",
+//     oldPrice: "19 000 сум",
+//     newPrice: "17 000 сум",
+//     image: "https://via.placeholder.com/150",
+//   },
+//   {
+//     id: 2,
+//     name: "Орнаменто 03 Керамическая плитка",
+//     oldPrice: "350 000 сум",
+//     newPrice: "324 000 сум",
+//     image: "https://via.placeholder.com/150",
+//   },
+//   {
+//     id: 3,
+//     name: "Пеноплекс Основа (20MM)",
+//     oldPrice: "16 999 сум",
+//     newPrice: "14 600 сум",
+//     image: "https://via.placeholder.com/150",
+//   },
+//   {
+//     id: 4,
+//     name: "Сайдинитель Краб",
+//     oldPrice: "9 200 сум",
+//     newPrice: "7 500 сум",
+//     image: "https://via.placeholder.com/150",
+//   },
+// ];
+
+// const ProductCard = ({ product }) => {
+//   return (
+//     <div className="bg-white p-4 rounded-lg shadow-md relative">
+//       <div className="absolute top-0 left-0 bg-red-600 text-white px-2 py-1 text-xs font-bold rotate-[-45deg] -translate-x-4 -translate-y-4">
+//         АКЦИЯ
+//       </div>
+//       <img src={product.image} alt={product.name} className="w-full h-40 object-cover mb-4" />
+//       <h2 className="text-gray-800 text-lg font-semibold">{product.name}</h2>
+//       <p className="text-red-500 line-through">{product.oldPrice}</p>
+//       <p className="text-black font-bold text-lg">{product.newPrice}</p>
+//       <button className="mt-4 w-full bg-yellow-500 text-white py-2 rounded-md">В корзину</button>
+//     </div>
+//   );
+// };
+
+// const App = () => {
+//   return (
+//     <div className="bg-gray-100 p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+//       {products.map((product) => (
+//         <ProductCard key={product.id} product={product} />
+//       ))}
+//     </div>
+//   );
+// };
+
+// export default App;

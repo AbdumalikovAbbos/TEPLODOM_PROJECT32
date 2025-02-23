@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { ShoppingCart } from "lucide-react";
 import { useCart } from "../contexts/CartContext";
 
-export default function PopularTovarsDetail() {
+export default function ProductCardDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [similarProducts, setSimilarProducts] = useState([]);
@@ -25,7 +25,7 @@ export default function PopularTovarsDetail() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:8081/ProductCard/${id}`)
+    fetch(`http://localhost:8081/ProductCardHome/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setProduct(data);
@@ -34,7 +34,7 @@ export default function PopularTovarsDetail() {
   }, [id]);
 
   useEffect(() => {
-    fetch("http://localhost:8081/ProductCardHome")
+    fetch(`http://localhost:8081/ProductCardHome`)
       .then((response) => response.json())
       .then((data) => setSimilarProducts(data))
       .catch((error) =>
@@ -53,6 +53,7 @@ export default function PopularTovarsDetail() {
   const handleOrderSubmit = (e) => {
     e.preventDefault();
 
+    // Agar biron maydon bo'sh bo'lsa
     if (Object.values(formData).some((value) => value.trim() === "")) {
       setError("Пожалуйста, заполните все поля.");
       return;
@@ -60,6 +61,7 @@ export default function PopularTovarsDetail() {
     setError("");
     setIsOrderPlaced(true);
 
+    // 3 soniyadan keyin modal avtomatik yopiladi
     setTimeout(() => {
       setIsModalOpen(false);
       setIsOrderPlaced(false);
@@ -90,7 +92,7 @@ export default function PopularTovarsDetail() {
               {product.price} $
             </p>
             <div className="flex gap-x-[34px]">
-              {/* Birinchi tugma: modalni ochish */}
+              {/* Birinchi tugma: Modalni ochish */}
               <div
                 className="bg-[#FFB12A] w-[64px] h-[64px] rounded-[8px] mt-[40px] flex items-center justify-center cursor-pointer"
                 onClick={() => setIsModalOpen(true)}
@@ -138,7 +140,6 @@ export default function PopularTovarsDetail() {
           </div>
         </div>
       </div>
-
       {/* Похожие продукты */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
         <b className="text-lg sm:text-2xl font-inter mb-4 inline-flex items-center">
@@ -172,7 +173,6 @@ export default function PopularTovarsDetail() {
           ))}
         </div>
       </div>
-
       {/* Modal Oynasi */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">

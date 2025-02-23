@@ -1,50 +1,22 @@
-import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { ShoppingCart } from "lucide-react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useCart } from "../contexts/CartContext";
 
-export default function PopularTovarsDetail() {
-  const { id } = useParams();
-  const [product, setProduct] = useState(null);
-  const [similarProducts, setSimilarProducts] = useState([]);
+export default function CartPage() {
   const navigate = useNavigate();
-  const { addToCart } = useCart();
-
-  // Modal va forma uchun state'lar:
+  const { cart, removeFromCart } = useCart();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isOrderPlaced, setIsOrderPlaced] = useState(false);
   const [formData, setFormData] = useState({
-    quantity: "1",
+    quantity: "",
     name: "",
     phone: "",
     region: "",
     city: "",
     village: "",
-    address: "",
+    address: ""
   });
   const [error, setError] = useState("");
-
-  useEffect(() => {
-    fetch(`http://localhost:8081/ProductCard/${id}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setProduct(data);
-      })
-      .catch((error) => console.error("Error fetching product:", error));
-  }, [id]);
-
-  useEffect(() => {
-    fetch("http://localhost:8081/ProductCardHome")
-      .then((response) => response.json())
-      .then((data) => setSimilarProducts(data))
-      .catch((error) =>
-        console.error("Error fetching similar products:", error)
-      );
-  }, []);
-
-  if (!product) {
-    return <div>No products found</div>;
-  }
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -57,123 +29,63 @@ export default function PopularTovarsDetail() {
       setError("Пожалуйста, заполните все поля.");
       return;
     }
-    setError("");
+
+    setError(""); 
     setIsOrderPlaced(true);
 
     setTimeout(() => {
       setIsModalOpen(false);
       setIsOrderPlaced(false);
-      setFormData({
-        quantity: "1",
-        name: "",
-        phone: "",
-        region: "",
-        city: "",
-        village: "",
-        address: "",
-      });
+      setFormData({ quantity: "", name: "", phone: "", region: "", city: "", village: "", address: "" });
     }, 3000);
   };
 
   return (
-    <div className="bg-[#fafafa] pb-[100px] pt-[60px]">
-      <div className="max-w-7xl mx-auto p-4 bg-[#ffffff] p-[20px]">
-        <div className="flex gap-x-[46px]">
-          <div className="w-full border rounded-[20px]">
-            <img src={product.img} alt={product.title} className="w-full" />
-          </div>
-          <div>
-            <p className="font-[600] text-[48px]">{product.title}</p>
-            <p className="font-[400] text-[24px] mt-[30px]">{product.desc}</p>
-            <p className="font-[400] text-[24px] mt-[33px]">{product.size}</p>
-            <p className="font-[500] text-[48px] mt-[34px]">
-              {product.price} $
-            </p>
-            <div className="flex gap-x-[34px]">
-              {/* Birinchi tugma: modalni ochish */}
+    <div className="max-w-7xl mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-4">Корзина</h1>
+      {cart.length === 0 ? (
+        <p>Корзина пуста</p>
+      ) : (
+        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {cart.map((product) => (
+            <div
+              key={product.id}
+              className="w-full sm:w-[100%] h-auto sm:h-[401px] rounded-lg border bg-white shadow-sm"
+            >
               <div
-                className="bg-[#FFB12A] w-[64px] h-[64px] rounded-[8px] mt-[40px] flex items-center justify-center cursor-pointer"
-                onClick={() => setIsModalOpen(true)}
+                className="flex items-center justify-center p-6 sm:p-10"
+                onClick={() => navigate(`/product/${product.id}`)}
               >
                 <img
-                  src="/src/assets/uiw_payhamyon.svg"
-                  alt=""
-                  className="p-[14px]"
-                />
-              </div>
-              <div className="bg-white border-2 hover:bg-[#FFB12A] hover:border-white border-black w-[64px] h-[64px] rounded-[8px] mt-[40px] flex items-center justify-center">
-                <img
-                  src="/src/assets/fluent_calendar-clock-24-regularvaqt.svg"
-                  alt=""
-                  className="p-[14px]"
-                />
-              </div>
-              <div className="bg-white border-2 hover:bg-[#FFB12A] hover:border-white border-black w-[64px] h-[64px] rounded-[8px] mt-[40px] flex items-center justify-center">
-                <img
-                  src="/src/assets/material-symbols_shopping-cart-outline-roundedsumka.svg"
-                  alt=""
-                  className="p-[14px]"
-                  onClick={() => addToCart(product)}
-                />
-              </div>
-              <div className="bg-white border-2 hover:bg-[#FFB12A] hover:border-white border-black w-[64px] h-[64px] rounded-[8px] mt-[40px] flex items-center justify-center">
-                <img
-                  src="/src/assets/cil_heartlike.svg"
-                  alt=""
-                  className="p-[14px]"
-                />
-              </div>
-              <div className="flex items-center justify-between w-36 h-14 border border-[#E1E1E1] rounded-lg mt-[45px]">
-                <button className="w-1/3 h-full flex items-center justify-center border-r border-gray-300 text-xl font-bold hover:bg-gray-100">
-                  −
-                </button>
-                <div className="w-1/3 h-full flex items-center justify-center text-lg font-semibold">
-                  2
-                </div>
-                <button className="w-1/3 h-full flex items-center justify-center border-l border-gray-300 text-xl font-bold hover:bg-gray-100">
-                  +
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Похожие продукты */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
-        <b className="text-lg sm:text-2xl font-inter mb-4 inline-flex items-center">
-          Похожие продукты
-        </b>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {similarProducts.map((prod) => (
-            <div
-              key={prod.id}
-              className="w-full sm:w-[100%] h-auto sm:h-[401px] rounded-lg border bg-white shadow-sm cursor-pointer"
-              onClick={() => navigate(`/product/${prod.id}`)}
-            >
-              <div className="flex items-center justify-center p-6 sm:p-10">
-                <img
-                  src={prod.img}
-                  alt={prod.title}
+                  src={product.img}
+                  alt={product.title}
                   className="max-h-36 object-contain"
                 />
               </div>
-              <p className="mx-4 text-sm sm:text-base font-inter">{prod.title}</p>
-              <b className="mx-4 text-sm sm:text-base">{prod.price} $</b>
-              <div className="m-4 mt-4 flex gap-2">
+              <p className="mx-4 text-sm sm:text-base font-inter w-full">
+                {product.title}
+              </p>
+              <b className="mx-4 text-sm sm:text-base">{product.price}</b>
+              <div className="m-4 mt-4 flex gap-x-[10px]">
                 <button
-                  className="flex items-center justify-center bg-[#FFB12A] text-white gap-2 border border-[#FFB12A] rounded-lg p-2 w-full sm:w-auto mb-2"
-                  onClick={() => addToCart(prod)}
+                  className="bg-[#FFB12A] p-[12px] rounded-[8px] text-white text-center flex gap-x-[10px]"
+                  onClick={() => setIsModalOpen(true)}
                 >
-                  <ShoppingCart size={20} /> В корзину
+                  <img src="/src/assets/file 1 (Traced).png" alt="" />
+                  Оформить
+                </button>
+                <button
+                  className="text-white p-2 rounded-lg border border-gray-300 text-gray-400 hover:text-red-500 hover:border-red-500 transition"
+                  onClick={() => removeFromCart(product.id)}
+                >
+                  <img src="/src/assets/mi_delete.png" alt="" />
                 </button>
               </div>
             </div>
           ))}
-        </div>
-      </div>
+        </ul>
+      )}
 
-      {/* Modal Oynasi */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
           <div className="bg-white p-6 rounded-lg shadow-lg w-[900px] relative">
@@ -184,8 +96,10 @@ export default function PopularTovarsDetail() {
               ✖
             </button>
             {isOrderPlaced ? (
-              <h2 className="text-[28px] font-[600] text-center text-green-500">
-                Спасибо за покупку! 🎉
+              <h2 className="text-[28px] font-[600] text-center text-black">
+                Спасибо за покупку!
+                
+                <p>Ваш номер заказа {cart[1].id}</p>
               </h2>
             ) : (
               <>
@@ -237,6 +151,7 @@ export default function PopularTovarsDetail() {
                       />
                     </div>
                   </div>
+
                   <div className="flex flex-col sm:flex-row gap-4 mt-[20px]">
                     <div className="flex-1">
                       <label className="block mb-2">Введите город / район</label>
@@ -261,6 +176,7 @@ export default function PopularTovarsDetail() {
                       />
                     </div>
                   </div>
+
                   <label className="block mb-2 mt-[20px]">Введите адрес</label>
                   <input
                     type="text"
@@ -270,6 +186,7 @@ export default function PopularTovarsDetail() {
                     className="w-full p-2 border rounded"
                     placeholder="Введите адрес"
                   />
+
                   <button type="submit" className="bg-[#FFB12A] w-full p-2 mt-4 text-white rounded">
                     Оформить заказ
                   </button>

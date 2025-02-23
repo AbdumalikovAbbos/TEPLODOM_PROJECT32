@@ -92,7 +92,7 @@ export default function Nav() {
               </Link>
             </button>
             <button className="p-3 lg:p-[14px] bg-white rounded-full flex items-center justify-center">
-              <Link to="/Shop" className="h-5 w-5 lg:h-[28px] lg:w-[28px]">
+              <Link to="/cart" className="h-5 w-5 lg:h-[28px] lg:w-[28px]">
                 <svg
                   width="28"
                   height="28"
@@ -272,7 +272,7 @@ export default function Nav() {
               <Link to="/Like" className="p-3 bg-gray-100 rounded-full">
                 <Heart className="w-6 h-6" />
               </Link>
-              <Link to="/Shop" className="p-3 bg-gray-100 rounded-full">
+              <Link to="/cart" className="p-3 bg-gray-100 rounded-full">
                 <svg
                   width="28"
                   height="28"
@@ -294,35 +294,34 @@ export default function Nav() {
             </div>
           </div>
         </div>
-
         <nav className="hidden md:flex justify-between gap-4 py-5">
           <Link
             to="/sale"
-            className="px-[25px] py-[11px] bg-[#eeeded] rounded-lg text-[#000000] hover:bg-[#FFB12A] hover:text-white transition-colors font-[600] font-inter"
+            className="px-[25px] py-[11px] bg-[#eeeded] rounded-lg text-[#000000] hover:bg-gradient-to-r from-[#FFB12A] to-[#EF8100] hover:text-white transition-colors font-[600] font-inter"
           >
             Товары по акции
           </Link>
           <Link
             to="/new"
-            className="px-[25px] py-[11px] bg-[#FFB12A] text-white rounded-lg hover:bg-[#FFB12A] transition-colors  font-[600] font-inter"
+            className="px-[25px] py-[11px] bg-gradient-to-r from-[#FFB12A] to-[#EF8100] text-white rounded-lg hover:bg-gradient-to-r from-[#FFB12A] to-[#EF8100] transition-colors  font-[600] font-inter"
           >
             Новинки
           </Link>
           <Link
             to="/suppliers"
-            className="px-[25px] py-[11px] bg-[#eeeded] rounded-lg text-[#000000] hover:bg-[#FFB12A] hover:text-white font-[600] transition-colors font-inter"
+            className="px-[25px] py-[11px] bg-[#eeeded] rounded-lg text-[#000000] hover:bg-gradient-to-r from-[#FFB12A] to-[#EF8100] hover:text-white font-[600] transition-colors font-inter"
           >
             Поставщикам
           </Link>
           <Link
             to="/contacts"
-            className="px-[25px] py-[11px] bg-[#eeeded] rounded-lg text-[#000000]hover:bg-[#FFB12A] hover:text-white font-[600] transition-colors font-inter"
+            className="px-[25px] py-[11px] bg-[#eeeded] rounded-lg text-[#000000] hover:bg-gradient-to-r from-[#FFB12A] to-[#EF8100] hover:text-white font-[600] transition-colors font-inter"
           >
             Контакты
           </Link>
           <Link
             to="/returns"
-            className="px-[25px] py-[11px] bg-[#eeeded] rounded-lg text-[#000000] hover:bg-[#FFB12A] hover:text-white font-[600] transition-colors font-inter"
+            className="px-[25px] py-[11px] bg-[#eeeded] rounded-lg text-[#000000] hover:bg-gradient-to-r from-[#FFB12A] to-[#EF8100] hover:text-white font-[600] transition-colors font-inter"
           >
             Возврат товара
           </Link>
