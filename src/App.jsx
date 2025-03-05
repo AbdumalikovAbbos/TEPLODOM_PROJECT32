@@ -19,6 +19,8 @@ import CartProvider from "./contexts/CartContext";
 import CartPage from "./components/CartPage";
 import Like from "./components/Like";
 import { LikeProvider } from "./contexts/LikeContext";
+import { Filter, Search } from "lucide-react";
+import FilterPage from "./components/FilterPage";
 
 const App = () => {
   return (
@@ -42,7 +44,7 @@ const App = () => {
         <Route path="/aksiya-detail/:id" element={<AksiyaDetail />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/like" element={<Like />} />
-
+        <Route path="/filter" element={<FilterPage />} />
       </Routes>
       <FooterT />
     </BrowserRouter>

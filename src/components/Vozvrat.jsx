@@ -2,7 +2,7 @@ import React from "react";
 
 const Vozvrat = () => {
   return (
-    <section className="bg-[#fafafa]">
+    <section className="bg-[#fafafa] mb-[120px]">
       <div className="relative max-w-7xl  mx-auto px-4 py-8">
         <div>
           <p className="font-[400] text-[18px] leading-[30px] text-[#000000]">

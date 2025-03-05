@@ -27,7 +27,7 @@ const SuxiSmesiDetail = () => {
   }, [categoryId]);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 pt-10">
+    <div className="max-w-7xl mx-auto px-4 pt-10 mb-[120px]">
       <h1 className="text-3xl font-bold mb-6">Products in Category</h1>
 
       {loading && <p className="text-center">Loading products...</p>}
@@ -51,6 +51,7 @@ const SuxiSmesiDetail = () => {
           ))}
         </div>
       )}
+     
     </div>
   );
 };

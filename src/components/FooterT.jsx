@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import ScrollToTop from "./ScrollToTop ";
+// import ScrollToTop from "./ScrollToTop";
 const Footer = () => {
-  return (
+  return (<>
+  <ScrollToTop/>
     <footer className="bg-[#2D2B45]">
       <div className="max-w-7xl mx-auto">
         <div className="footer-wrapper py-[40px] sm:py-[80px]">
@@ -271,6 +273,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+  </>
   );
 };
 

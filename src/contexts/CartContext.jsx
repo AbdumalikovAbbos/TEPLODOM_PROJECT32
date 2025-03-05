@@ -14,6 +14,7 @@ export default function CartProvider({ children }) {
   
   const addToCart = (product) => {
     setCart((prevCart) => [...prevCart, product]);
+    alert("Товар успешно добавлен в корзину!"); 
   };
 
   const removeFromCart = (productId) => {

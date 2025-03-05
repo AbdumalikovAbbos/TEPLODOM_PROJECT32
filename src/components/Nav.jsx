@@ -3,10 +3,17 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Search, Heart, User, Menu, X } from "lucide-react";
-
+import { useNavigate } from "react-router-dom";
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate()
 
+  const handleSearch = (e) => {
+     if(e.key === "Enter" && searchTerm.trim() !== ""){
+      navigate(`/filter?query=${searchTerm}`);
+     }
+  }
   return (
     <div className="w-full bg-[#fafafa]">
       <div className="max-w-7xl mx-auto px-4 pt-[35px]">
@@ -80,6 +87,8 @@ export default function Nav() {
                 type="search"
                 placeholder="Поиск..."
                 className="w-full px-4 py-2 pl-10 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                onChange={(e) => setSearchTerm(e.target.value)}
+                onKeyDown={handleSearch}
               />
               <Search className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             </div>
@@ -91,7 +100,7 @@ export default function Nav() {
                 <Heart className="h-5 w-5 lg:h-[28px] lg:w-[28px]" />
               </Link>
             </button>
-            <button className="p-3 lg:p-[14px] bg-white rounded-full flex items-center justify-center">
+            <a className="p-3 lg:p-[14px] bg-white rounded-full flex items-center justify-center">
               <Link to="/cart" className="h-5 w-5 lg:h-[28px] lg:w-[28px]">
                 <svg
                   width="28"
@@ -108,7 +117,7 @@ export default function Nav() {
                   />
                 </svg>
               </Link>
-            </button>
+            </a>
             <Link
               to="/profile"
               className="flex items-center gap-2 bg-white p-2 lg:p-3 text-sm rounded-[15px]"
@@ -141,18 +150,17 @@ export default function Nav() {
             </svg>
           </button>
         </div>
-
         <div className="md:hidden mb-4">
           <div className="relative">
             <input
               type="search"
               placeholder="Поиск..."
               className="w-full px-4 py-2 pl-10 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+              
             />
-            <Search className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            <Search className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"/>
           </div>
         </div>
-
         <div
           className={`md:hidden fixed inset-0 bg-white z-50 transition-transform duration-300 ease-in-out ${
             isMenuOpen ? "translate-x-0" : "-translate-x-full"

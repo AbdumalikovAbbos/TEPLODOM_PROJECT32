@@ -11,7 +11,6 @@ import InternetShop from "../components/InternetShop";
 // import Postavshikam from "../components/Postavshikam";
 import PopularTovars from "../components/PopularTovars";
 // import PopularTovarsDetail from "../components/PopularTovarsDetail";
-
 const Home = () => {
   return (
     <div className="bg-[#fafafa]">
@@ -22,7 +21,7 @@ const Home = () => {
       <PopularTovars />   
       <OurProducts />
       <OurComand />
-      <InternetShop />
+    <InternetShop />
     </div>
   );
 };

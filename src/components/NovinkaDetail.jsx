@@ -29,7 +29,8 @@ export default function NovinkaDetail() {
   if (!product) {
     return <div>No products found</div>;
   }
-
+ 
+   
   return (
     <div className="bg-[#fafafa] pb-[100px] pt-[60px]">
       <div className="max-w-7xl mx-auto p-4 bg-[#ffffff] p-[20px]">

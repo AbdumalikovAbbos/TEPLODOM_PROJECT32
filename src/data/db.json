@@ -91,7 +91,169 @@
       "image": "/public/images/Rectangle 23875.png"
     }
   ],
-
+  "products": [
+    {
+      "id": 101,
+      "title": "Товары для сада",
+      "image": "/public/images/Rectangle 23820.png",
+      "price": "20000 сум",
+      "categoryId": 1
+    },
+    {
+      "id": 102,
+      "title": "Шпаклевка Knauf",
+      "image": "/public/images/image 299.png",
+      "price": "35000 сум",
+      "categoryId": 1
+    },
+    {
+      "id": 201,
+      "title": "Металлопрокат",
+      "image": "/public/images/Rectangle 23831.png",
+      "price": "5000 сум",
+      "categoryId": 1
+    },
+    {
+      "id": 202,
+      "title": "Крепежи",
+      "image": "/public/images/Rectangle 23827.png",
+      "price": "8000 сум",
+      "categoryId": 1
+    },
+    {
+      "id": 301,
+      "title": "Химическая продукция",
+      "image": "/public/images/Rectangle 23828.png",
+      "price": "120000 сум",
+      "categoryId": 2
+    },
+    {
+      "id": 401,
+      "title": "Ручные инструменты",
+      "image": "/public/images/Rectangle 23829.png",
+      "price": "45000 сум",
+      "categoryId": 2
+    },
+    {
+      "id": 501,
+      "title": "Сантехника",
+      "image": "/public/images/Rectangle 23839.png",
+      "price": "45000 сум",
+      "categoryId": 2
+    },
+    {
+      "id": 601,
+      "title": "Пиломатериалы",
+      "image": "/public/images/Rectangle 23835.png",
+      "price": "45000 сум",
+      "categoryId": 2
+    },
+    {
+      "id": 701,
+      "title": "Водосточные системы",
+      "image": "/public/images/Rectangle 23836.png",
+      "price": "45000 сум",
+      "categoryId": 3
+    },
+    {
+      "id": 801,
+      "title": "Напольные покрытия",
+      "image": "/public/images/Rectangle 23837.png",
+      "price": "45000 сум",
+      "categoryId": 3
+    },
+    {
+      "id": 901,
+      "title": "Сайдинг",
+      "image": "/public/images/Rectangle 23847.png",
+      "price": "45000 сум",
+      "categoryId": 3
+    },
+    {
+      "id": 1001,
+      "title": "ЖБИ изделия",
+      "image": "/public/images/Rectangle 23843.png",
+      "price": "45000 сум",
+      "categoryId": 3
+    },
+    {
+      "id": 1101,
+      "title": "Сыпучие строительные",
+      "image": "/public/images/Rectangle 23844.png",
+      "price": "45000 сум",
+      "categoryId": 5
+    },
+    {
+      "id": 1201,
+      "title": "Инструменты штукатурные",
+      "image": "/public/images/Rectangle 23845.png",
+      "price": "45000 сум",
+      "categoryId": 4
+    },
+    {
+      "id": 1301,
+      "title": "Агрохимия",
+      "image": "/public/images/Rectangle 23864.png",
+      "price": "45000 сум",
+      "categoryId": 4
+    },
+    {
+      "id": 1401,
+      "title": "Лепной Декор",
+      "image": "/public/images/Rectangle 23851.png",
+      "price": "45000 сум",
+      "categoryId": 4
+    },
+    {
+      "id": 1501,
+      "title": "Вентиляция",
+      "image": "/public/images/Rectangle 23852.png",
+      "price": "45000 сум",
+      "categoryId": 4
+    },
+    {
+      "id": 1601,
+      "title": "Дренажные системы",
+      "image": "/public/images/Rectangle 23853.png",
+      "price": "45000 сум",
+      "categoryId": 5
+    },
+    {
+      "id": 1701,
+      "title": "Электро техника",
+      "image": "/public/images/Rectangle 23855.png",
+      "price": "45000 сум",
+      "categoryId": 5
+    },
+    {
+      "id": 1801,
+      "title": "Двери и Окна",
+      "image": "/public/images/Rectangle 23872.png",
+      "price": "45000 сум",
+      "categoryId": 5
+    },
+    {
+      "id": 1901,
+      "title": "Мебель",
+      "image": "/public/images/Rectangle 23865.png",
+      "price": "45000 сум",
+      "categoryId": 6
+    },
+    {
+      "id": 2000,
+      "title": "Плинтус",
+      "image": "/public/images/Rectangle 23873.png",
+      "price": "45000 сум",
+      "categoryId": 6
+    },
+    {
+      "id": 2100,
+      "title": "Мастер",
+      "image": "/public/images/Rectangle 23875.png",
+      "price": "45000 сум",
+      "categoryId": 6
+    }
+  ],
   "ProductCardHome": [
     {
       "id": 19,
@@ -433,3 +595,6 @@
     }
   ]
 }
+
+
+
